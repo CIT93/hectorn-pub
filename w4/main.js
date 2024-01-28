@@ -46,30 +46,19 @@ function start(houseHoldMembers, houseSize) {
   ]);
 }
 
-function displayOutput1() {
+function displayOutput() {
   for (arr of cfpData) {
     console.log(arr)
-    const output = document.getElementById("output1");
+    const output = document.getElementById("output");
+    const newH2 = document.createElement("h2");
+    newH2.textContent = `Carbon Footprint ${arr[4]}`;
+    const newH3 = document.createElement("h3");
+    newH3.textContent = `Based on number in and size of home`;
     const newP = document.createElement("p");
-    newP.textContent = `Based on your members of household of ${arr[0]}, your Carbon Footprint total is ${arr[2]}`;
-    output.appendChild(newP)
-  }
-}
-function displayOutput2() {
-  for (arr of cfpData) {
-    console.log(arr)
-    const output = document.getElementById("output2");
-    const newP = document.createElement("p");
-    newP.textContent = `Based on your house size of ${arr[1]}, your Carbon Footprint total is ${arr[3]}`;
-    output.appendChild(newP)
-  }
-}
-function displayTotal() {
-  for (arr of cfpData) {
-    console.log(arr)
-    const output = document.getElementById("outputTotal");
-    const newP = document.createElement("p");
-    newP.textContent = `Based on your members of household of ${arr[0]} and your house size of ${arr[1]}, your Carbon Footprint total is ${arr[4]}`;
+    newP.textContent = `This number is based on the number of people in the house of ${arr[0]} (score: ${arr[3]}),`;
+    newP.textContent += ` and a ${arr[1]} size home (score:${arr[3]}).`;
+    output.appendChild(newH2);
+    output.appendChild(newH3);
     output.appendChild(newP)
   }
 }
@@ -81,6 +70,4 @@ start(4, "apt");
 start(5, "large");
 start(6, "medium");
 
-displayOutput1();
-displayOutput2();
-displayTotal();
+displayOutput();
