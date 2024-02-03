@@ -33,31 +33,10 @@ function determineHouseHoldPts(numberInHousehold) {
   return houseHoldPts;
 }
 
-function displayOutObj(obj) {
-  console.log(obj);
-  const output = document.getElementById("output");
-  const newH2 = document.createElement("h2");
-  newH2.textContent = `Carbon Footprint Total of ${obj.cfpTotal}`;
-  output.appendChild(newH2);
-  const newH3 = document.createElement("h3");
-  newH3.textContent = `Based on number in home of ${obj.houseM}`;
-  output.appendChild(newH3);
-  const newP = document.createElement("p");
-  newP.textContent = `House Size of ${obj.houseS}`;
-  output.appendChild(newP);
-}
-
 function start(houseHoldMembers, houseSize) {
   const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
-  const houseHoldObj = {
-    houseM: houseHoldMembers,
-    HouseS: houseSize,
-    houseMPTS: houseHoldPTS,
-    houseSPTS: houseSizePTS,
-    cfpTotal: total
-  }
   cfpData.push({
     houseM: houseHoldMembers,
     houseS: houseSize,
@@ -72,19 +51,15 @@ function displayOutput() {
     console.log(obj)
     const output = document.getElementById("output");
     const newH2 = document.createElement("h2");
-    newH2.textContent = `Carbon Footprint ${obj.cfpTotal}`;
-    // const newH3 = document.createElement("h3");
-    // newH3.textContent = `Based on number in and size of home`;
-    // const newP = document.createElement("p");
-    // newP.textContent = `This number is based on the number of people in the house of ${arr[0]} (score: ${arr[3]}),`;
-    // newP.textContent += ` and a ${arr[1]} size home (score:${arr[3]}).`;
+    newH2.textContent = `Carbon Footprint Total of ${obj.cfpTotal}`;
+    const newP = document.createElement("p");
+    newP.textContent = `Members of household of ${obj.houseM} (Score: ${obj.houseMPTS}),`;
+    newP.textContent += ` and a ${obj.houseS} size home (Score:${obj.houseSPTS}).`;
     output.appendChild(newH2);
-    // output.appendChild(newH3);
-    // output.appendChild(newP)
+    output.appendChild(newP)
   }
 }
 
-// genuinely racked by brain on how to refactor this but genuinely had no idea.
 // function displayOutput() {
 //   for (let i = 0; i < cfpData.length; i++) {
 //     console.log(i)
