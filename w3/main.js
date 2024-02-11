@@ -1,7 +1,7 @@
 function determineHouseSizePts(size) {
   if (size === "large") {
     carbonFootprintPoints = carbonFootprintPoints + 10;
-  } else if (size ==="medium") {
+  } else if (size === "medium") {
     carbonFootprintPoints = carbonFootprintPoints + 7;
   } else if (size === "small") {
     carbonFootprintPoints = carbonFootprintPoints + 4;
