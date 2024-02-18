@@ -54,12 +54,10 @@ function start(firstname, lastname, houseHoldMembers, houseSize) {
 function displayOutput() {
   for (obj of cfpData) {
     console.log(obj);
-    const firstname = FORM.firstname.value;
-    const lastname = FORM.lastname.value;
     const newH2 = document.createElement("h2");
     newH2.textContent = `Carbon Footprint ${obj.cfpTotal}`;
     const newH3 = document.createElement("h3");
-    newH3.textContent = `Based on number in and size of home for ${obj.fir}`;
+    newH3.textContent = `Based on number in and size of home for ${obj.firstN} ${obj.lastN}`;
     const newP = document.createElement("p");
     newP.textContent = `This number is based on the number if people in the house of ${obj.houseM} (Score: ${obj.houseMPTS}),`;
     newP.textContent += ` and a ${obj.houseS} size home (Score:${obj.houseSPTS}).`;
