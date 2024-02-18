@@ -1,15 +1,9 @@
 import { renderTbl } from "./render.js";
-<<<<<<< HEAD
 import { determineHouseHoldPts,determineHouseSizePts } from "./footprint.js";
-=======
->>>>>>> d4fdf652531abb7cc5ea758bfa3ae3aabe7eb964
-  
   const FORM = document.getElementById("form");
 const OUTPUT = document.getElementById("output");
 const cfpData = [];
 
-<<<<<<< HEAD
-=======
 function determineHouseSizePts(size) {
   let houseSizePoints = 0;
   if (size === "large") {
