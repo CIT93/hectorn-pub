@@ -30,7 +30,7 @@ function renderTbl(data) {
   } else {
     table = document.getElementById("table");
   }
-  
+
   const tbody = document.createElement("tbody");
 
   //const trTextArr = ["Hector", 3, "Large", 20];
@@ -38,13 +38,10 @@ function renderTbl(data) {
     const tr = document.createElement("tr");
     for (let row in obj) {
       if (row === "lastN") {
-        console.log("skip");
         continue;
       } else if (row === "houseMPTS") {
-        console.log("skip");
         continue;
       } else if (row === "houseSPTS") {
-        console.log("skip");
         continue;
       }
       const td = document.createElement("td");
