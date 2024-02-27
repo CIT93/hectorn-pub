@@ -34,11 +34,13 @@ function renderTblBtn(index,data) {
   });
 
   btnEdit.addEventListener('click', function(e){
-    const obj = data[index];
-    document.getElementById("name").value = obj.Name;
-    document.getElementById("household").value = obj.HouseHold;
-    document.getElementById("housesize").value = obj.HouseSize;
-    renderTbl(data)
+
+      // const firstName = FORM.firstname.value;
+      // const lastName = FORM.lastname.value;
+      // const houseMembers = parseInt(FORM.housem.value);
+      // const houseSize = FORM.houses.value;
+
+      renderTbl(data);
     });
   return td;
 }
