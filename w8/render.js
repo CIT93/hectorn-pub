@@ -26,11 +26,20 @@ function renderTblBtn(index,data) {
   btnDel.addEventListener('click', function(e){
     console.log("hello from the delete button")
     data.splice(index, 1);
-    renderTbl(data)
-  })
-  btnEdit.addEventListener('click', funtioin(e){
+    if (data.length === 0) {
+      TBL.innerHTML = "";
+    } else {
+      renderTbl(data);
+    }
+  });
 
-  })
+  btnEdit.addEventListener('click', function(e){
+    const obj = data[index];
+    document.getElementById("name").value = obj.Name;
+    document.getElementById("household").value = obj.HouseHold;
+    document.getElementById("housesize").value = obj.HouseSize;
+    renderTbl(data)
+    });
   return td;
 }
 
@@ -49,6 +58,7 @@ function renderTblBody(data) {
     const td = renderTblBtn(index,data);
     tr.appendChild(td);
     tbody.appendChild(tr);
+
   });
   return tbody;
 }
