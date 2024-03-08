@@ -78,3 +78,22 @@ const a = 3;
     console.log(a);
 })(a);
 ```
+
+## arrow function
+
+- function expression that is a compact version of traditional function
+- map that loops over the array, but you will lose some detail of what the function is doing compared to traditional.
+- the arrow is the "function" and the arrow is added in after parameter [(a)]
+
+```
+const add2 = (a) => {
+  return 2 + a;
+  }
+```
+
+- with an arrow if we have one expression {[expression is in what is inside curly brackets]} curly braces can be removed and parenthesis on [(a)] can be removed
+- will return result by default, no need to have the "return" in the function
+
+```
+const add2 = (a) => 2 + a;
+```

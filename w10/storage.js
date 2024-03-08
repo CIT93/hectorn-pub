@@ -1,13 +1,13 @@
 // function to save local storage. will be running function every time new user input is gathered.
 
 // variable of serializedArray will be stringify cfpData
-const saveLS = function (cfpData) {
+const saveLS = (cfpData) => {
   const serializedArr = JSON.stringify(cfpData);
   localStorage.setItem("cfp", serializedArr); //Key of: cfpData with Value: serialized array
 }; // when we call the the save LS we willo be passing a reference to the array
 
 // companion function - unsure if this is callback because this function is within the const cfpData so i want to say it is
-const getLS = function () {
+const getLS = () => {
   //passing in the reference "cfpData"
   const retrievedArr = localStorage.getItem("cfp"); // telling local storage to send me whatever is marked with that key"cfpData"
 

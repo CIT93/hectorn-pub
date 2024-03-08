@@ -3,7 +3,7 @@ import { determineHouseHoldPts, determineHouseSizePts } from "./cfp.js";
 import { FORM, FNAME, LNAME, SUBMIT } from "./global.js";
 import { saveLS, cfpData } from "./storage.js";
 //function now has name and given const so we don't accidentally overwrite
-const start = function(first, last, houseHoldMembers, houseSize) {
+const start = (first, last, houseHoldMembers, houseSize) => {
   const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
@@ -21,7 +21,7 @@ const start = function(first, last, houseHoldMembers, houseSize) {
 renderTbl(cfpData); //passing in reference to local data and renders table
 
 // Function to validate a single field
-const validateField = function(event) {
+const validateField = event => {
   const field = event.target.value;
   const fieldId = event.target.id;
   const fieldError = document.getElementById(`${fieldId}Error`);
@@ -40,7 +40,7 @@ const validateField = function(event) {
 FNAME.addEventListener("blur", validateField);
 LNAME.addEventListener("blur", validateField);
 
-FORM.addEventListener("submit", function (e) {
+FORM.addEventListener("submit", e => {
   e.preventDefault();
   //setting up two variables to verify if true or false(first name is valid = true or false based on evaluating if input is valid )
 
@@ -59,3 +59,9 @@ FORM.addEventListener("submit", function (e) {
     SUBMIT.textContent = "Form requires First and Last name";
   }
 });
+
+//rest operator
+// const add2 = function(...a){
+//   return 2+a(3);
+//   }
+//   const result = add2(1, 2, 3, 4)
