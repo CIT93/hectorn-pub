@@ -1,7 +1,7 @@
 // function to save local storage. will be running function every time new user input is gathered.
 
 // variable of serializedArray will be stringify cfpData
-const saveLS = (cfpData) => {
+const saveLS = cfpData => {
   const serializedArr = JSON.stringify(cfpData);
   localStorage.setItem("cfp", serializedArr); //Key of: cfpData with Value: serialized array
 }; // when we call the the save LS we willo be passing a reference to the array

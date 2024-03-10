@@ -26,6 +26,8 @@ So the data that we have will be stored directly onto the browser for use later,
 
 - *I feel like i can grasp the process of functions in the 'run of the mill" function but I am trying to rewrite down what the functions are and what they do whenever possible now, to drill it into me. So I that case i guess I am still struggling with functions*
 
+### Default Value
+
 ```
 const add2 = function(a = 10){
     return 2+a;
@@ -36,7 +38,7 @@ const result = add2()
 - if no [add2("value")] is set we may want to add a **default value** to the function [(a=10)], this means that we will be assuming the value as what is in the function.
 - This is an edge case = a way of error checking and making sure we try to implement ways to have our code do what we want it to do.
 
-### Rest = 
+### Rest =
 
 ```
 const add2 = function(...a){
