@@ -2,18 +2,26 @@
 
 So the data that we have will be stored directly onto the browser for use later,unless intentionally cleared. In the local storage You need to call the setItem method (localStorage.setItem) passing in two arguments (the key of the item[the identifyer]: the value itself). In local storage we are storing data in string format, by using the JSON.stringify we are *serializing*(translating an object or data structure) into string for storage. To bring back the information we use *parse* which will get the item back into an object for use inside of javascript.
 
-# Function review
+# Function Review
 
-- const add2 = function(a){
-    console.log(2+a);
-    add2(3)
-  - in this function we are passing in the value of a(which in this case is 3)
-  - call function then runs
-}
+- explanation of a function...
+- function can be named anything (generally- simplest to name the function what it is)
+
+```
 "declaring function" = "argument"("parameter"){
     "expression that is inside of the function"
 }
-- function can be named anything (generally- simplest to name the function what it is)
+```
+
+```
+    const add2 = function(a){
+    console.log(2+a);
+    }
+    add2(3)
+```
+
+- in this function we are passing in the value of a(which in this case is 3)
+- call function then runs
 - when return expression will **always** return something, but without an explicit value we wont be able to used captured return. that why we will need a result
 
 - *I feel like i can grasp the process of functions in the 'run of the mill" function but I am trying to rewrite down what the functions are and what they do whenever possible now, to drill it into me. So I that case i guess I am still struggling with functions*
@@ -22,22 +30,24 @@ So the data that we have will be stored directly onto the browser for use later,
 const add2 = function(a = 10){
     return 2+a;
     }
-    const result = add2()
+const result = add2()
 ```
 
 - if no [add2("value")] is set we may want to add a **default value** to the function [(a=10)], this means that we will be assuming the value as what is in the function.
 - This is an edge case = a way of error checking and making sure we try to implement ways to have our code do what we want it to do.
 
+### Rest = 
+
 ```
 const add2 = function(...a){
     return 2+a(3);
     }
-    const result = add2(1, 2, 3, 4)
+const result = add2(1, 2, 3, 4)
 ```
 
-**spread argument** will be passing in multiple things into the function by referencing the [add2()] by passing in the array[(1, 2, 3, 4)]. We will have all the arguments in the array to choose what our value will be for [a]. This is good for declarative. In this case we are choosing the [a] to be [(3)] which in the array is "4" so our function will return 2+a(4) = 6.  
+**Rest argument** will be passing in multiple things into the function by referencing the [add2()] by passing in the array[(1, 2, 3, 4)]. We will have all the arguments in the array to choose what our value will be for [a]. This is good for declarative. In this case we are choosing the [a] to be [(3)] which in the array is "4" so our function will return 2+a(4) = 6.  
 
-**Outer/Inner funtion** the inner function(nested) can read the variables in the parent scope(exterior bloc or world) but the outer unction cannot see what it in the inner scope. This will have **closure**, in week 10 we have ...
+**Outer/Inner function** the inner function(nested) can read the variables in the parent scope(exterior bloc or world) but the outer unction cannot see what it in the inner scope. This will have **closure**, in week 10 we have ...
 
 ```
 const renderTblBtn = function(obj, index, data) {
@@ -79,7 +89,7 @@ const a = 3;
 })(a);
 ```
 
-## arrow function
+### Arrow Function
 
 - function expression that is a compact version of traditional function
 - map that loops over the array, but you will lose some detail of what the function is doing compared to traditional.
