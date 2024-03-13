@@ -1,7 +1,7 @@
 import { renderTbl } from "./render.js";
 import { determineHouseHoldPts, determineHouseSizePts } from "./cfp.js";
 import { FORM} from "./global.js"
-import { saveLS, cfpData, getLS} from "./storage.js"
+import { saveLS, cfpData} from "./storage.js"
 
 
 

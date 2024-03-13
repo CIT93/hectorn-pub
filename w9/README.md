@@ -1,6 +1,7 @@
 # What does our code do so far?
 
 ## FORM.addEventListener("submit", function (e) {
+
     - Event listener will be listening for the activation by the submit in our for.
     - (e.prevent)
         will prevent default behavior of looking at server
@@ -16,21 +17,30 @@
     - Call start function
     - this passes in the values
 
-
 ## *renderTbl*
+
 - Will tke the data from the array of our **const cfpData = []** and render it in our webpage as a table.
 - This will then move to our render module to run the renderTbl function.
+
 ## *function renderTbl(data)*
-- fist step is to create the table. 
-    -  Will run the **const table = renderTblHeading** 
-        - this will move to run **function renderTblHeading**, a function that will create the heading of our table.
+
+- fist step is to create the table.
+  - Will run the **const table = renderTblHeading** 
+  - this will move to run **function renderTblHeading**, a function that will create the heading of our table.
+
 ## *function renderTblHeading()*
+
 - This function will create our table heading
 - **TBL.innerHTML = ""** this line of code will clear the content of the HTML with id TBL. Existing content will be removed.
+
 #### *const table = document.createElement("table");*
+
 - creates table element with variable table that will hold heading and data rows
+
 #### *const thead = document.createElement("thead");*
+
 - creates a thead element with variable thead
+
 #### *const tr = document.createElement("tr");*
 - creates a tr(table row) element with variable tr
 - This will represent the header row of the table. 

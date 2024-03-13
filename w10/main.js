@@ -3,21 +3,35 @@ import { determineHouseHoldPts, determineHouseSizePts } from "./cfp.js";
 import { FORM, FNAME, LNAME, SUBMIT } from "./global.js";
 import { saveLS, cfpData } from "./storage.js";
 //function now has name and given const so we don't accidentally overwrite
-const start = (first, last, houseHoldMembers, houseSize) => {
-  const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
-  const houseSizePTS = determineHouseSizePts(houseSize);
+// const start = (first, last, houseHoldMembers, houseSize) => {
+//   const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
+//   const houseSizePTS = determineHouseSizePts(houseSize);
+//   const total = houseHoldPTS + houseSizePTS;
+//   cfpData.push({
+//     firstName: first,
+//     lastName: last,
+//     houseM: houseHoldMembers,
+//     houseS: houseSize,
+//     houseMPTS: houseHoldPTS,
+//     houseSPTS: houseSizePTS,
+//     cfpTotal: total,
+//   });
+// }
+
+const start = (...i) => {
+  const houseHoldPTS = determineHouseHoldPts(i[2]);
+  const houseSizePTS = determineHouseSizePts(i[3]);
   const total = houseHoldPTS + houseSizePTS;
   cfpData.push({
-    firstName: first,
-    lastName: last,
-    houseM: houseHoldMembers,
-    houseS: houseSize,
+    firstName: i[0],
+    lastName: i[1],
+    houseM: i[2],
+    houseS: i[3],
     houseMPTS: houseHoldPTS,
     houseSPTS: houseSizePTS,
     cfpTotal: total,
   });
 }
-
 renderTbl(cfpData); //passing in reference to local data and renders table
 
 // Function to validate a single field
