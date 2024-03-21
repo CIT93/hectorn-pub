@@ -46,12 +46,12 @@ FORM.addEventListener("submit", e => {
   e.preventDefault();
   //setting up two variables to verify if true or false(first name is valid = true or false based on evaluating if input is valid )
 
-  //if statement to check validiti, if one of the two is invalid code will skip to else
+  //if statement to check validity, if one of the two is invalid code will skip to else
   if (FNAME.value !== "" && LNAME.value !== "") {
     //if first and last name is valid we will run rest of code below - good form submission.
     SUBMIT.textContent = ""; // remove the invalid warning when resubmitting
     //start(FNAME.value, LNAME.value, parseInt(FORM.housem.value), FORM.houses.value);
-    const fpObj = new FP(FNAME.value, LNAME.value, parseInt(FORM.housem.value), FORM.houses.value);
+    const fpObj = new FP(FNAME.value, LNAME.value, parseInt(FORM.housem.value), FORM.houses.value, FORM.foodChoice.value);
     cfpData.push(fpObj)
     saveLS(cfpData); //calling function from local storage but only what is in volatile memory
     renderTbl(cfpData);

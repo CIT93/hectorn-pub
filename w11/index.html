@@ -24,17 +24,27 @@
                 <input type="text" name="lastname" id="lastName" minlength="1" maxlength="25">
                 <span id="lastNameError" class="error"> </span>
             </div>
-            <label for="">Count the members of your household</label>
+            <label for="">Members of your household:</label>
             <input type="number" name="housem" min="1" max="6" required>
             </div>
             <div>
-                <label for="">Consider the size of your home</label required>
+                <label for="">Consider the size of your home:</label required>
                 <select name="houses">
                     <option value="">---Please select size of home---</option>
                     <option value="large">Large</option>
                     <option value="medium">Medium</option>
                     <option value="small">Small</option>
                     <option value="Apt">Apartment</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Consider your Eating Habits:</label required>
+                <select name="foodChoice" id="foodchoice">
+                    <option value="">---Please select your eating habits---</option>
+                    <option value="Domestic Meat: Daily">Domestic Meat: Daily</option>
+                    <option value="Domestic Meat: Few Times a Week">Domestic Meat: Few times a week </option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Vegan or Wild Meat">Vegan or Wild Meat</option>
                 </select>
             </div>
             <button type="submit">Submit</button><br>
