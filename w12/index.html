@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W12 - CIT93</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <h1>Workout Timer</h1>
+    <form id="wOForm">
+        <fieldset>
+            <legend>Warming Up</legend>
+            <div>
+                <label for="type">Type of Warmup: </label>
+                <select name="exercise" id="dropdown" required>
+                <option value="">...Please choose Workout...</option>
+                <option value="Jump">JumpingJacks</option>
+                <option value="Running">Running in Place</option>
+                <option value="Rope">Jump Rope</option>
+            </select>
+        </div>
+        <div><label for="timer">How Long of a Warmup: </label>
+            <select name="dropdown" id="dropdown">
+                <option value="">1 minute</option>
+                <option value="">5 minutes</option>
+                <option value="">10 minutes</option>
+            </select>
+        </div>
+        <div><label for="button">Start Timer</label>
+            <button type="submit">Go!</button></div>
+        </fieldset>
+    </form>
+    <div id="results"></div>
+</body>
+
+</html>
