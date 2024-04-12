@@ -24,4 +24,3 @@ const stopWarmup = (exercise) => {
   OUTPUT.appendChild(h2);
 };
 
-
