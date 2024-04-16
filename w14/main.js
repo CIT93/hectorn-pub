@@ -1,94 +1,58 @@
-// function getData(){
-//     return new Promise(resolve =>{
-//         setTimeout(() => {
-//             resolve(46)
-//         }, 1)
-//     })
-// }
+/* const url = 'http://worldtimeapi.org/api/timezone/America/New_York'
 
-// async function start(){
-// const result = await getData()
-// console.log(result)
-// }
-
-// async function start2(){
-//     getData()
-//     .then(result =>{
-//     console.log(result)
-//     })
-//
-
-/* async function start(){
-const data = await fetch('https://api.weather.gov/gridpoints/OKX/35,35/forecast')
-const result = await data.json()
-console.log(result.properties.periods[1].shortForecast)
+async function getData() {
+    const response = await fetch(url)
+    const data = await response.json()
+    console.log(data)
 }
 
-async function start2() {
-    fetch('https://api.weather.gov/gridpoints/OKX/35,35/forecast')
-        .then(data => data.json())
-        .then(result => {
-    console.log(result.properties.periods[1].shortForecast)
+getData() */
+
+/* const url = 'http://api.spotify.com/v1/artists/0k17h0D3J5VfsdmQ1iZtE9'
+
+async function getData() {
+    const request = new Request(url,{
+        headers: {
+            'Authorization': 'Bearer '
+        }
     })
+    const response = await fetch(url)
+    const data = await response.json()
+    console.log(data)
 }
 
-start2() */
+getData()  */
 
-//function getData() {
-    //return new Promise(function(resolve, reject) {
-        //setTimeout(() => {
-            // resolve('here is your data')
-            //reject('something went wrong')
-        //}, 1)
-    //})
-//}
+const url = 'https://banana.republic'
 
-//function onSuccess() {
-//}
-
-//function onFailure() {
-//}
-
-//async function start() {
-    //try {
-    //const result = await getData()
-    //console.log(`Success: ${result}`)
-    //onSuccess()
-    //SUCCESS
-//} catch (error) {
-    //onFailure()
-    //console.log(`ERROR: ${error}`)
-    //FAILURE
-    //}
-//}
-
-/* async function start2() {
-    const result = await getData()
-    .catch(error => {
-        console.log(`ERROR: ${error}`)
-    })
-    console.log(result)
-} */
-
-//start()
-
-async function start() {
-    try {
-        const data = await fetch('https://api.weather.gov/gridpoints/HNX/52,100/forecast')
-        const result = await data.json();
-        onSuccess(result.properties.periods[1].temperature)
-    } catch(e){
-        onError(e);
+////async function getData() {
+const request = new Request(url, {
+    headers: {
+        'Authorization': 'Bearer 123'
     }
-    
+})
+//fetch(request)
+async function getData() {
+    try {
+    const response = await fetch(request)
+    const data = await response.json()
+    if (response.status === 200) {
+        console.log(`Success`, data)
+        } else {
+            console.log(`Server Error`, data.error.message)
+        }
+    } catch(error) {
+        console.log(`Error`, error)
+    }
 }
+    //.then(response => console.log(response))
+//    .then(response => response.json())
+//    .then(data => console.log(`Success:`, data))
+//    .catch(error => console.log(`Error: ${error}`))
+////    const data = await response.json()
+////    const response = await fetch(url)
+////    const data = await response.json()
+////    console.log(data)
+////}
 
-function onSuccess(result) {
-    console.log(`Success: ${result}`)
-}
-
-function onError(result) {
-    console.log(`Error: ${err}`)
-}
-
-start()
+getData() 
