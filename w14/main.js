@@ -34,14 +34,14 @@ async function start2() {
 
 start2() */
 
-function getData() {
-    return new Promise(function(resolve, reject) {
-        setTimeout(() => {
+//function getData() {
+    //return new Promise(function(resolve, reject) {
+        //setTimeout(() => {
             // resolve('here is your data')
-            reject('something went wrong')
-        }, 1)
-    })
-}
+            //reject('something went wrong')
+        //}, 1)
+    //})
+//}
 
 //function onSuccess() {
 //}
@@ -49,18 +49,18 @@ function getData() {
 //function onFailure() {
 //}
 
-async function start() {
-    try {
-    const result = await getData()
+//async function start() {
+    //try {
+    //const result = await getData()
     //console.log(`Success: ${result}`)
     //onSuccess()
     //SUCCESS
-} catch (error) {
+//} catch (error) {
     //onFailure()
     //console.log(`ERROR: ${error}`)
     //FAILURE
-    }
-}
+    //}
+//}
 
 /* async function start2() {
     const result = await getData()
@@ -69,5 +69,26 @@ async function start() {
     })
     console.log(result)
 } */
+
+//start()
+
+async function start() {
+    try {
+        const data = await fetch('https://api.weather.gov/gridpoints/OKX/35,35/forecast')
+        const result = await data.json();
+        onSuccess(result.properties.periods[1].shortForecast)
+    } catch(e){
+        onerror(e);
+    }
+    
+}
+
+function onSuccess(result) {
+    console.log(`Success: ${result}`)
+}
+
+function onError(result) {
+    console.log(`Error: ${err}`)
+}
 
 start()
