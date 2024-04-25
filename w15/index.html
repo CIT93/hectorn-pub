@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 11 - Carbon Footprint - Private </title>
+    <script type="module" src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form id="form">
+        <fieldset>
+            <legend>Calculating Your Carbon Footprint Points</legend>
+            <div id="error" color=red></div>
+            <div>
+                <label for="">First Name:</label>
+                <input type="text" name="firstname" id="firstName" minlength="1" maxlength="25">
+                <span id="firstNameError" class="error"> </span>
+            </div>
+            <div>
+                <label for="">Last Name:</label>
+                <input type="text" name="lastname" id="lastName" minlength="1" maxlength="25">
+                <span id="lastNameError" class="error"> </span>
+            </div>
+            <label for="">Members of your household:</label>
+            <input type="number" name="housem" min="1" max="6" required>
+            </div>
+            <div>
+                <label for="">Consider the size of your home:</label required>
+                <select name="houses" required>
+                    <option value="">---Please select size of home---</option>
+                    <option value="large">Large</option>
+                    <option value="medium">Medium</option>
+                    <option value="small">Small</option>
+                    <option value="apt">Apartment</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Consider your Eating Habits:</label required>
+                <select name="foodChoice" required>
+                    <option value="">---Please select your eating habits---</option>
+                    <option value="Domestic Meat: Daily">Domestic Meat: Daily</option>
+                    <option value="Domestic Meat: Few Times a Week">Domestic Meat: Few times a week </option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Vegan or Wild Meat">Vegan or Wild Meat</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button><br>
+            <span id="submitError" class="error"></span>
+        </fieldset>
+
+    </form>
+    <div id="output"></div>
+    <div id="tab-data"></div>
+</body>
+
+</html>
