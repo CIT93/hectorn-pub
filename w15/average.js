@@ -13,5 +13,4 @@ function addRow() {
     let scoreText = document.createTextNode(average); 
     scoreCell.appendChild(scoreText);
 }
-
-export { addRow };
+export { addRow }
