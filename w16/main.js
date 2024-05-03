@@ -34,6 +34,7 @@ FORM.addEventListener("submit", (e) => {
     //if first and last name is valid we will run rest of code below - good form submission.
     SUBMIT.textContent = ""; // remove the invalid warning when resubmitting
     //start(FNAME.value, LNAME.value, parseInt(FORM.housem.value), FORM.houses.value);
+    const hasBoth = FORM.dish_washer.checked;
     const fpObj = new FP(
       FNAME.value,
       LNAME.value,
@@ -42,6 +43,7 @@ FORM.addEventListener("submit", (e) => {
       e.target.foodChoice.value,
       e.target.foodSource.value,
       parseInt(e.target.water.value),
+      hasBoth
     );
     cfpData.push(fpObj);
     saveLS(cfpData); //calling function from local storage but only what is in volatile memory
