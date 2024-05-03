@@ -70,6 +70,15 @@
                 <label for="dish_washer">Do you have both a dishwasher and a washing machine?</label>
                 <input type="checkbox" id="both" name="dish_washer" checked />
             </div>
+            <label>Household Purchases per Year:</label>
+            <select name="water" required>
+                <option value="">---How many items do you purchase a year---</option>
+                <option value="10">7 or more pieces of furniture, electronics or household gadgets</option>
+                <option value="8">between 5 to 7 items</option>
+                <option value="6">between 3 to 5 items</option>
+                <option value="4">Purchase less than three items</option>
+                <option value="2">Only Secondhand / Almost no new items</option>
+            </select>
             <button type="submit">Submit</button><br>
             <span id="submitError" class="error"></span>
         </fieldset>

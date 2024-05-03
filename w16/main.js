@@ -43,7 +43,8 @@ FORM.addEventListener("submit", (e) => {
       e.target.foodChoice.value,
       e.target.foodSource.value,
       parseInt(e.target.water.value),
-      hasBoth
+      hasBoth,
+      parseInt(e.target.purchasePoints.value)
     );
     cfpData.push(fpObj);
     saveLS(cfpData); //calling function from local storage but only what is in volatile memory
