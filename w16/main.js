@@ -1,5 +1,5 @@
 import { renderTbl } from "./render.js";
-import { FORM, FNAME, LNAME, SUBMIT } from "./global.js";
+import { FORM, FNAME, LNAME, SUBMIT, WATER, BOTH } from "./global.js";
 import { saveLS, cfpData } from "./storage.js";
 import { FP } from "./fp.js";
 
@@ -34,7 +34,7 @@ FORM.addEventListener("submit", (e) => {
     //if first and last name is valid we will run rest of code below - good form submission.
     SUBMIT.textContent = ""; // remove the invalid warning when resubmitting
     //start(FNAME.value, LNAME.value, parseInt(FORM.housem.value), FORM.houses.value);
-    const hasBoth = FORM.dish_washer.checked;
+    //const hasBoth = FORM.dish_washer.checked; - MY ATTEMPT
     const fpObj = new FP(
       FNAME.value,
       LNAME.value,
@@ -43,16 +43,27 @@ FORM.addEventListener("submit", (e) => {
       e.target.foodChoice.value,
       e.target.foodSource.value,
       parseInt(e.target.water.value),
-      hasBoth,
-      parseInt(e.target.purchasePoints.value)
+      // hasBoth, - MY ATTEMPT
+      e.target.dish_washer.checked ? parseInt(e.target.water.value) * 2 : parseInt(e.target.water.value),
+      e.target.dish_washer.checked,
+      parseInt(e.target.purchases.value)
     );
     cfpData.push(fpObj);
     saveLS(cfpData); //calling function from local storage but only what is in volatile memory
     renderTbl(cfpData);
     FORM.reset();
+    BOTH.disabled = false;
     //want to show user there is an error with their form submission
   } else {
     //text content is set as a value(submitEl) so we can clear
     SUBMIT.textContent = "Form requires First and Last name";
+  }
+});
+
+WATER.addEventListener("change", e => {
+  if(parseInt(WATER.value) === 0){
+    BOTH.disabled = true;
+  } else {
+    BOTH.disabled = false;
   }
 });

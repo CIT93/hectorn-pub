@@ -6,9 +6,11 @@ class FP {
     houseSize,
     foodChoice,
     foodSource,
+    //hasBoth,
+    waterValue,
     waterConsum,
-    hasBoth,
-    purchasePoints
+    both,
+    purchases
   ) {
     this.first = first;
     this.last = last;
@@ -16,9 +18,10 @@ class FP {
     this.houseSize = houseSize;
     this.foodChoice = foodChoice;
     this.foodSource = foodSource;
+    this.waterValue = waterValue;
     this.waterConsumPoints = waterConsum;
-    this.hasBoth = hasBoth;
-    this.purchasePoints = purchasePoints;
+    this.both = both;
+    this.purchasesPoints = purchases;
     this.calHouseHoldPoints();
     this.calHouseSizePoints();
     this.calFoodChoicePoints();
@@ -75,17 +78,16 @@ class FP {
   }
 
   calTotal() {
-    let waterPoints = this.waterConsumPoints;
+/*     let waterPoints = this.waterConsumPoints;
     if (this.hasBoth) {
       waterPoints *= 2;
-    }
+    } */
     this.total =
       this.houseHoldPoints +
       this.houseSizePoints +
       this.foodChoicePoints +
       this.foodSourcePoints +
-      this.purchasePoints +
-      waterPoints;
+      this.purchasesPoints;
   }
 }
 
