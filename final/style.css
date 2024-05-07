@@ -1,0 +1,63 @@
+html {
+    font-size: 22px;
+}
+
+body {
+    background-color: #333;
+    color: whitesmoke;
+}
+
+form label {
+    display: block;
+    margin-bottom: 2px;
+}
+
+form select,
+form input[type="text"],
+form input[type="number"] {
+    width: 20%;
+    padding: 2px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+form button[type="submit"] {
+    background-color: #945050; 
+    color: papayawhip;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+form button[type="submit"]:hover {
+    background-color: #d6671c;
+}
+
+
+.error-message {
+    color: red;
+}
+
+table {
+    width: 75%;
+}
+th, td {
+    border: 1px solid rgb(255, 255, 255);
+    padding: 8px;
+    text-align: center;
+}
+th { 
+    background-color: #945050;
+}
+
+.journalEntry {
+    width: 80%;
+    height: 100px; 
+    padding: 8px;
+    font-size: 14px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    resize: both;
+}

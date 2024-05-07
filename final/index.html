@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Data</title>
+    <script type="module" src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Sleep Journal</h1>
+    <p></p>
+    <form id="sleepForm">
+        <fieldset>
+            <legend>Enter Sleep Data</legend>
+            <div>
+                <label for="selectedDay">Select Day:</label>
+            <select id="selectedDay" name="selectedDay">
+                    <option value="" selected>---Please select a day---</option>
+                    <option value="Sunday">Sunday</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                </select>
+            </div>
+            <div>
+                <label for="totalHoursSlept">Total Hours Slept This Week so Far:</label>
+                <input type="number" id="totalHoursSlept" name="totalHoursSlept" min="0" required>
+                <span id="totalHoursSleptError" class="error-message"></span>
+            </div>
+            <div>
+                <label for="hoursSleptLastNight">Hours Slept Last Night:</label>
+                <input type="number" id="hoursSleptLastNight" name="hoursSleptLastNight" min="0"  required>
+                <span id="hoursSleptLastNightError" class="error-message"></span>
+            </div>
+            <button type="submit" id="submitButton">Submit</button>
+        </fieldset>
+    </form>
+    <br>
+    <div id="table-data"></div>
+</body>
+
+</html>
